@@ -1,5 +1,5 @@
 <template>
-  <div id="HomePage">
+  <div id="HomePage" class="wow fadeIn" data-wow-duration="1s" data-wow-delay="1s">
     <!-- 轮播图 -->
     <div id="swiper" class="container-fuild">
       <div class="swiper-container banner-swiper">
@@ -18,12 +18,6 @@
             </div>
           </div>
         </div>
-        <!-- 如果需要分页器 -->
-        <div class="swiper-pagination"></div>
-
-        <!-- 如果需要导航按钮 -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
       </div>
     </div>
     <!-- banner-nav -->
@@ -188,7 +182,7 @@
               <p>{{item.title}}</p>
             </div>
           </div>
-          <div class="deal-main-content flxc">
+          <div class="deal-main-content">
             <div class="deal-main-content-fll">
               <div class="ttl">
                 赋能企业门店数字化技术使用
@@ -204,7 +198,7 @@
                 </ul>
               </div>
             </div>
-            <div class="writingStyle-main-content-flr flxc">
+            <div class="deal-main-content-flr flxc">
               <img src="@/assets/img/插画-2-1@2x.png" alt="">
             </div>
           </div>
@@ -212,13 +206,13 @@
       </div>
     </div>
     <!-- 数字生态圈 -->
-    <div class="container-fuild">
-      <div class="row  math-container">
+    <div id="math" class="container-fuild">
+      <div class="row math-container">
         <div class="common-title flxc">
           数字生态圈，契合多场景应用，一站式解决方案
         </div>
+        <div class="math-content"></div>
       </div>
-      <div class="math-content"></div>
     </div>
     <!-- 多元化 -->
     <div class="container-fuild">
@@ -238,12 +232,12 @@
         </div>
         <!-- 食品 -->
         <div class="container-fuild">
-          <div class="row food-container">
+          <div class="food-container">
             <div class="common-title flxc">
               快消、调味品、小食品渠道商专属数字化平台
             </div>
+            <div class="food-content"></div>
           </div>
-          <div class="food-content"></div>
         </div>
       </div>
     </div>
@@ -581,7 +575,8 @@
 <script>
 import Swiper from "swiper";
 import { WOW } from 'wowjs';
-import { writingStyleNavList, writeCtList, problemList, dealNavList, dealCtList, businessList, dealerNavList } from './config'
+import { writingStyleNavList, writeCtList, problemList, dealNavList, dealCtList, businessList, dealerNavList } from './config';
+
 export default {
   name: "HomePage",
   data() {
@@ -618,16 +613,10 @@ export default {
         stopOnLastSlide: false,
         disableOnInteraction: false
       },
-      // // 如果需要分页器
-      // pagination: {
-      //   el: ".swiper-pagination",
-      //   clickable: true
-      // },
-      // // 如果需要前进后退按钮
-      // navigation: {
-      //   nextEl: ".swiper-button-next",
-      //   prevEl: ".swiper-button-prev"
-      // },
+      // 如果需要分页器
+      pagination: false,
+      // 如果需要前进后退按钮
+      navigation: false,
       // 延迟加载
       lazy: {
         loadPrevNext: true
@@ -645,11 +634,8 @@ export default {
         stopOnLastSlide: false,
         disableOnInteraction: false
       },
-      // // 如果需要前进后退按钮
-      // navigation: {
-      //   nextEl: ".swiper-button-next",
-      //   prevEl: ".swiper-button-prev"
-      // },
+      // 如果需要前进后退按钮
+      navigation: false,
       observer: true, //修改swiper自己或子元素时，自动初始化swiper
       observeParents: true //修改swiper的父元素时，自动初始化swiper
     });
@@ -707,16 +693,15 @@ export default {
 #swiper .banner-swiper .swiper-slide-title {
   position: absolute;
   top: 0;
-  left: 0;
-  z-index: 999999999;
-  width: 100%;
-  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1200px;
   color: #fff;
   text-align: left;
   line-height: 80px;
 }
 #swiper .banner-swiper .swiper-slide-title > .tt1 {
-  font-family: DingTalk JinBuTi;
+  font-family: DingTalk JinBuTi, PingFang SC;
   font-size: 36px;
   font-weight: normal;
   line-height: normal;
@@ -839,6 +824,7 @@ export default {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  padding-top: 68px;
 }
 .common-title {
   padding: 0 48.5px;
@@ -903,12 +889,19 @@ export default {
 }
 
 .writingStyle-main-content {
-  padding: 0 110px;
+  width: 1440px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px 120px;
 }
 .writingStyle-main-content-fll {
+  /* 自动布局 */
   display: flex;
   flex-direction: column;
-  padding-top: 67.5px;
+  justify-content: center;
+  padding: 40px 0px;
+  align-self: stretch;
   width: 50%;
 }
 .writingStyle-main-content-fll .ttl {
@@ -963,26 +956,30 @@ export default {
 .problem-container {
   padding-top: 70px;
   opacity: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-   background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url(../assets/img/image@3x.png);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url(../assets/img/image@3x.png);
 }
 .problem-main {
-  margin: 48.5px auto 0;
+  margin: 48.5px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
 .problem-main ul {
+  /* 自动布局 */
   display: flex;
-  flex-direction: row;
+  justify-content: center;
   flex-wrap: wrap;
-  justify-content: space-between;
+  padding: 0px;
+  gap: 20px;
   width: 1200px;
 }
 .problem-main li {
   width: 283px;
-  height: 166px;
   margin-bottom: 20px;
   border-radius: 4px;
   opacity: 1;
@@ -1071,9 +1068,14 @@ export default {
   color: #3975FB;
 }
 .deal-main-content {
-  width: 1200px;
+  width: 1440px;
+  height: 400px;
+  position: relative;
 }
 .deal-main-content-fll {
+  position: absolute;
+  left: 180px;
+  top: 0px;
   display: flex;
   flex-direction: column;
   padding-top: 67.5px;
@@ -1119,21 +1121,28 @@ export default {
   color: #4B5C76;
 }
 .deal-main-content-flr {
-  width: 50%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  opacity: 1;
 }
 .deal-main-content-flr img {
   width: 945.02px;
   height: 410px;
 }
 
+#math {
+
+}
 .math-container {
-  padding: 33px 0;
+  padding: 33px 0 0;
   background: #E4E9F0;
 }
 .math-content {
-  width: 100%;
-  height: 665px;
-  background: url("../assets/img/87@3x.png") no-repeat;
+  width: 1440px;
+  height: 645px;
+  margin: 0 auto;
+  background: url("../assets/img/math_bg.png") no-repeat #E4E9F0;
   background-size: 100% 100%;
 }
 
@@ -1186,10 +1195,12 @@ export default {
 /* 快消 */
 .food-container {
   padding: 33px 0;
+  background-color: #f3f8fb;
 }
 .food-content {
-  width: 100%;
-  height: 599px;
+  width: 1440px;
+  height: 498px;
+  margin: 0 auto;
   background: url("../assets/img/39@2x.png") no-repeat;
   background-size: 100% 100%;
 }

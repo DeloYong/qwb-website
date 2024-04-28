@@ -162,6 +162,7 @@ export default {
 #header .header-nav .header-nav-logo img:last-child {
   width: 80px;
   height: 32px;
+  margin-left: 2px;
 }
 /* 导航栏 导航容器 */
 #header .header-nav-fixed .header-nav-wrapper {

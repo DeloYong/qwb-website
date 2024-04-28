@@ -1,127 +1,129 @@
 <template>
   <!-- footer -->
-  <div id="footer" class="row problem-container">
-    <div class="footer-tips">
-      <div class="item">
-        <div class="icon">
-          <img src="@/assets/img/footer/tips3.png" alt="">
+  <div id="footer" class="row">
+    <div class="footer-container">
+      <div class="footer-tips">
+        <div class="item">
+          <div class="icon">
+            <img src="@/assets/img/footer/tips3.png" alt="">
+          </div>
+          <div class="txt">强大的技术支持</div>
         </div>
-        <div class="txt">强大的技术支持</div>
+        <div class="item">
+          <div class="icon">
+            <img src="@/assets/img/footer/tips4.png" alt="">
+          </div>
+          <div class="txt">一对一线上培训</div>
+        </div>
+        <div class="item">
+          <div class="icon">
+            <img src="@/assets/img/footer/tips1.png" alt="">
+          </div>
+          <div class="txt">会员线上专线服务</div>
+        </div>
+        <div class="item">
+          <div class="icon">
+            <img src="@/assets/img/footer/tips2.png" alt="">
+          </div>
+          <div class="txt">全方位售后服务</div>
+        </div>
       </div>
-      <div class="item">
-        <div class="icon">
-          <img src="@/assets/img/footer/tips4.png" alt="">
-        </div>
-        <div class="txt">一对一线上培训</div>
-      </div>
-      <div class="item">
-        <div class="icon">
-          <img src="@/assets/img/footer/tips1.png" alt="">
-        </div>
-        <div class="txt">会员线上专线服务</div>
-      </div>
-      <div class="item">
-        <div class="icon">
-          <img src="@/assets/img/footer/tips2.png" alt="">
-        </div>
-        <div class="txt">全方位售后服务</div>
-      </div>
-    </div>
-    <div class="footer-main">
-      <div class="footer-content">
-        <div class="footer-ct1">
-          <div class="ct1-ttl">
-            产品
-          </div>
-          <div class="ct1-nr">
-            企微宝开单版
-          </div>
-          <div class="ct1-nr">
-            企微宝开单版
-          </div>
-          <div class="ct1-nr">
-            企微宝开单版
-          </div>
-          <div class="ct1-nr">
-            企微宝开单版
-          </div>
-          <div class="ct1-nr">
-            企微宝开单版
-          </div>
-          <div class="ct1-nr">
-            企微宝开单版
-          </div>
-        </div>
-        <div class="footer-ct1">
-          <div class="ct1-ttl">
-            功能模块
-          </div>
-          <div class="ct1-nr">
-            智能ERP
-          </div>
-          <div class="ct1-nr">
-            智能会计
-          </div>
-          <div class="ct1-nr">
-            外勤管理
-          </div>
-          <div class="ct1-nr">
-            商城管理
-          </div>
-          <div class="ct1-nr">
-            物流管理
-          </div>
-        </div>
-        <div class="footer-ct1">
-          <div class="ct1-ttl">
-            了解企微宝
-          </div>
-          <div class="ct1-nr">
-            关于我们
-          </div>
-          <div class="ct1-nr">
-            客户案例
-          </div>
-          <div class="ct1-nr">
-            解决方案
-          </div>
-          <div class="ct1-nr">
-            代理加盟
-          </div>
-        </div>
-        <div class="footer-ct1">
-          <div class="ct1-ttl">
-            服务
-          </div>
-          <div class="ct1-nr">
-            帮助中心
-          </div>
-          <div class="ct1-nr">
-            下载软件
-          </div>
-        </div>
-        <div class="footer-contact">
-          <div class="ct1-ttl">
-            关注或联系我们
-          </div>
-          <div class="ct1-nr">
-            添加企微宝公众号、视频号、了解实时资讯
-          </div>
-          <div class="wx-tub">
-            <div class="erweima">
-              <img src="@/assets/img/footer/erweima.png" alt="">
+      <div class="footer-main">
+        <div class="footer-content">
+          <div class="footer-ct1">
+            <div class="ct1-ttl">
+              产品
             </div>
-            <div class="erweima">
-              <img src="@/assets/img/footer/erweima.png" alt="">
+            <div class="ct1-nr">
+              企微宝开单版
             </div>
-            <div class="erweima">
-              <img src="@/assets/img/footer/erweima.png" alt="">
+            <div class="ct1-nr">
+              企微宝开单版
+            </div>
+            <div class="ct1-nr">
+              企微宝开单版
+            </div>
+            <div class="ct1-nr">
+              企微宝开单版
+            </div>
+            <div class="ct1-nr">
+              企微宝开单版
+            </div>
+            <div class="ct1-nr">
+              企微宝开单版
             </div>
           </div>
-          <div class="phone">
-            <p><span>咨询热线：</span>400-000-000</p>
-            <p><span>商务合作：</span>xucyyvol2k@aol.com</p>
-            <p><span>业务合作：</span>xucyyvol2k@aol.com</p>
+          <div class="footer-ct1">
+            <div class="ct1-ttl">
+              功能模块
+            </div>
+            <div class="ct1-nr">
+              智能ERP
+            </div>
+            <div class="ct1-nr">
+              智能会计
+            </div>
+            <div class="ct1-nr">
+              外勤管理
+            </div>
+            <div class="ct1-nr">
+              商城管理
+            </div>
+            <div class="ct1-nr">
+              物流管理
+            </div>
+          </div>
+          <div class="footer-ct1">
+            <div class="ct1-ttl">
+              了解企微宝
+            </div>
+            <div class="ct1-nr">
+              关于我们
+            </div>
+            <div class="ct1-nr">
+              客户案例
+            </div>
+            <div class="ct1-nr">
+              解决方案
+            </div>
+            <div class="ct1-nr">
+              代理加盟
+            </div>
+          </div>
+          <div class="footer-ct1">
+            <div class="ct1-ttl">
+              服务
+            </div>
+            <div class="ct1-nr">
+              帮助中心
+            </div>
+            <div class="ct1-nr">
+              下载软件
+            </div>
+          </div>
+          <div class="footer-contact">
+            <div class="ct1-ttl">
+              关注或联系我们
+            </div>
+            <div class="ct1-nr">
+              添加企微宝公众号、视频号、了解实时资讯
+            </div>
+            <div class="wx-tub">
+              <div class="erweima">
+                <img src="@/assets/img/footer/erweima.png" alt="">
+              </div>
+              <div class="erweima">
+                <img src="@/assets/img/footer/erweima.png" alt="">
+              </div>
+              <div class="erweima">
+                <img src="@/assets/img/footer/erweima.png" alt="">
+              </div>
+            </div>
+            <div class="phone">
+              <p><span>咨询热线：</span>400-000-000</p>
+              <p><span>商务合作：</span>xucyyvol2k@aol.com</p>
+              <p><span>业务合作：</span>xucyyvol2k@aol.com</p>
+            </div>
           </div>
         </div>
       </div>
@@ -139,13 +141,16 @@ export default {
 <style scoped>
 /* footer */
 #footer {
-  /* 自动布局 */
+
+  background: #F6F7FB;
+}
+.footer-container {
+  width: 1440px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   padding: 0px 120px;
   align-self: stretch;
-
-  background: #F6F7FB;
 }
 .footer-tips {
   width: 1200px;

@@ -2,6 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+import './assets/css/global.css';
 
 /* 路由 */
 import router from './router'
@@ -28,7 +29,7 @@ import './assets/js/bootstrap.min'
 /* animate.css */
 import 'animate.css'
 
- 
+
 /* 头部组件 */
 import Header from './components/Header'
 Vue.component(Header.name,Header)

@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" v-cloak>
     <Header></Header>
     <router-view/>
     <Footer></Footer>
@@ -14,4 +14,7 @@ export default {
 </script>
 
 <style>
+[v-cloak] {
+  display: none;
+}
 </style>
