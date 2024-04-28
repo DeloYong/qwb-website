@@ -6,6 +6,12 @@
         <div class="swiper-wrapper">
           <div class="swiper-slide" v-for="(item,index) in swiperList" :key="index">
             <img class="swiper-lazy" :data-src="item.img" alt="轮播图">
+            <div class="video-container">
+              <video autoplay loop>
+                <source src="@/assets/img/video/earth.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
             <div class="swiper-lazy-preloader"></div>
             <div class="swiper-slide-title">
                 <p class="tt1">{{item.title}}</p>
@@ -303,6 +309,27 @@
         </div>
         <div class="shangshi-content">
           <div class="lfr">
+            <div>
+              <div class="ttl">
+                智能ERP
+              </div>
+              <div class="desc">
+                用户可通过扫码下单
+              </div>
+            </div>
+            <div class="ct-list">
+              <ul>
+                <li v-for="(item, index) in erpCtList" :key="index">
+                  <div class="vector">
+                    <img :src="item.img">
+                  </div>
+                  <span>{{item.title}}</span>
+                </li>
+              </ul>
+            </div>
+            <div class="btn-b flxc">
+              立即使用
+            </div>
           </div>
           <div class="lfc">
             <div class="item">
@@ -575,7 +602,7 @@
 <script>
 import Swiper from "swiper";
 import { WOW } from 'wowjs';
-import { writingStyleNavList, writeCtList, problemList, dealNavList, dealCtList, businessList, dealerNavList } from './config';
+import { writingStyleNavList, writeCtList, problemList, dealNavList, dealCtList, businessList, dealerNavList, erpCtList } from './config';
 
 export default {
   name: "HomePage",
@@ -599,7 +626,8 @@ export default {
       dealNavList,
       dealCtList,
       businessList,
-      dealerNavList
+      dealerNavList,
+      erpCtList
     };
   },
   mounted() {
@@ -663,6 +691,9 @@ export default {
 };
 </script>
 <style scoped>
+div {
+  max-width: 100%;
+}
 /* 整体盒子 */
 #HomePage {
   width: 100%;
@@ -684,6 +715,17 @@ export default {
   height: 100%;
 }
 #swiper .banner-swiper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+}
+.video-container {
+  position: absolute; /* 使用绝对定位 */
+  bottom: -80px;
+  right: 0; /* 定位到右边 */
+  width: 1400px;
+  height: 600px;
+}
+video {
   width: 100%;
   height: 100%;
 }
@@ -903,6 +945,7 @@ export default {
   padding: 40px 0px;
   align-self: stretch;
   width: 50%;
+  align-self: flex-end;
 }
 .writingStyle-main-content-fll .ttl {
   font-family: PingFang SC;
@@ -1311,16 +1354,83 @@ export default {
   height: 350px;
   opacity: 1;
 
-  /* 自动布局 */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 12px 32px;
+
+  box-shadow: 0px 2px 14px 0px rgba(0, 0, 0, 0.1);
+  background: url("../assets/img/other_bg.png") no-repeat;
+  background-size: 100% 100%;
+}
+.shangshi-content .lfr .ttl {
+  font-family: PingFang SC;
+  font-size: 24px;
+  font-weight: 600;
+
+  /* 文字色/232323 */
+  color: #232323;
+}
+.shangshi-content .lfr .desc {
+  font-family: PingFang SC;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: normal;
+  letter-spacing: 0em;
+  padding-top: 8px;
+
+  color: #4B5C76;
+}
+.shangshi-content .lfr .ct-list {
+  padding-top: 8px;
+}
+.shangshi-content .lfr .ct-list ul {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.shangshi-content .lfr .ct-list ul li {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+.shangshi-content .lfr .ct-list ul .vector {
+  padding-right: 5px;
+}
+.shangshi-content .lfr .ct-list ul .vector img {
+  width: 12px;
+  height: 8.67px;
+  display: inline-block;
+}
+.shangshi-content .lfr .ct-list ul li span {
+  font-family: PingFang SC;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: normal;
+  letter-spacing: 0em;
+
+  color: #4B5C76;
+}
+.shangshi-content .lfr .btn-b {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 10px 24px;
+  margin-top: 49px;
 
+  /* 主题色/蓝色 */
+  background: #3975FB;
+  font-family: PingFang SC;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: normal;
+  letter-spacing: 0em;
 
-  box-shadow: 0px 2px 14px 0px rgba(0, 0, 0, 0.1);
-  background: url("../assets/img/17@2x.png") no-repeat;
-  background-size: 100% 100%;
+  /* 文字色/#FFFFFF */
+  color: #FFFFFF;
 }
 .shangshi-content .lfc {
   display: flex;

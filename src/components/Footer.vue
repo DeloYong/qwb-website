@@ -146,6 +146,7 @@ export default {
 }
 .footer-container {
   width: 1440px;
+  max-width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;

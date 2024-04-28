@@ -231,3 +231,18 @@ export const dealerNavList = [
     title: '生产',
   }
 ]
+
+export const erpCtList = [
+  {
+    img: vector,
+    title: '特价单流程',
+  },
+  {
+    img: vector,
+    title: '多人盘点',
+  },
+  {
+    img: vector,
+    title: '自动做账',
+  }
+]
