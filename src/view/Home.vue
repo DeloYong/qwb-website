@@ -879,7 +879,7 @@ video {
   color: #232323;
 }
 .common-title-tips {
-  padding: 0 16px;
+  padding: 16px 16px;
   font-family: PingFang SC;
   font-size: 14px;
   font-weight: 600;
@@ -1069,7 +1069,7 @@ video {
 
 /* 处理 */
 .deal-main {
-  margin: 48.5px auto 0;
+  margin: 10px auto 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1116,14 +1116,15 @@ video {
   width: 1440px;
   height: 400px;
   position: relative;
+  display: flex;
+  align-items: flex-end;
 }
 .deal-main-content-fll {
   position: absolute;
   left: 180px;
-  top: 0px;
+  top: 83px;
   display: flex;
   flex-direction: column;
-  padding-top: 67.5px;
   width: 50%;
 }
 .deal-main-content-fll .ttl {
