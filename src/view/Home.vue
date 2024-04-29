@@ -170,11 +170,11 @@
           </ul>
         </div>
       </div>
-      <div id="deal" class="row problem-container">
+      <div id="deal" class="row problem-container" style="padding-top: 37px">
         <div class="common-title flxc">
           在企微宝，这些问题都能解决
         </div>
-        <p class="common-title-tips flxc">轻流进销系统不仅提供了采购、销售、生成、库存管理的标准化解决方案，还打破了各板块间的数据信息壁垒，实现进、销、存、产一体化管理</p>
+        <div class="common-title-tips flxc">轻流进销系统不仅提供了采购、销售、生成、库存管理的标准化解决方案，还打破了各板块间的数据信息壁垒，实现进、销、存、产一体化管理</div>
         <div class="deal-main flxc">
           <div class="nav-wrapper flxc">
             <div
@@ -185,7 +185,7 @@
               @click="setDealActive(index)"
             >
               <img :src="item.img" />
-              <p>{{item.title}}</p>
+              <span>{{item.title}}</span>
             </div>
           </div>
           <div class="deal-main-content">
@@ -333,8 +333,8 @@
           </div>
           <div class="lfc">
             <div class="item">
-              <p class="erp">商城版ERP</p>
-              <p class="desc">支持认证客户，线下线上一体化下单</p>
+              <div class="erp">商城版ERP</div>
+              <div class="desc">支持认证客户，线下线上一体化下单</div>
               <a href="">立即使用 ></a>
             </div>
             <div class="item">
@@ -443,10 +443,7 @@
       </div>
     </div>
     <!-- 供应商 -->
-    <div id="deal" class="row problem-container">
-      <div class="common-title flxc">
-        在企微宝，这些问题都能解决
-      </div>
+    <div id="deal" class="row dealer-container">
       <div class="deal-main flxc">
         <div class="nav-wrapper flxc">
           <div
@@ -533,7 +530,7 @@
       </div>
     </div>
     <!-- 合伙人 -->
-    <div id="partner" class="row problem-container">
+    <div id="partner" class="row partner-container">
       <div class="common-title flxc">
         成为企微宝合伙人
       </div>
@@ -736,9 +733,8 @@ video {
 }
 #swiper .banner-swiper .swiper-slide-title {
   position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 100px;
+  left: 118px;
   width: 1200px;
   color: #fff;
   text-align: left;
@@ -751,8 +747,6 @@ video {
   line-height: normal;
   letter-spacing: 0em;
   color: #232323;
-  margin-top: 99px;
-  margin-left: 118px;
 }
 #swiper .banner-swiper .swiper-slide-title > .tt2 {
   font-family: PingFang SC;
@@ -833,21 +827,33 @@ video {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0px;
 
   background: #FFFFFF;
 
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.3);
 
   z-index: 3;
+  list-style: none;
+  padding: 0;
 }
 .banner-nav ul li {
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 220px;
   height: 124px;
+}
+.banner-nav li:not(:last-child)::after {
+  content: ""; /* 伪元素需要 content 属性 */
+  position: absolute;
+  right: 0; /* 竖线放在元素的最右侧 */
+  top: 50%; /* 垂直居中 */
+  transform: translateY(-50%); /* 精确居中调整 */
+  width: 1px;
+  height: 40px;
+  background-color: #EEEEEE;
 }
 .banner-nav ul li img {
   width: 60px;
@@ -871,15 +877,17 @@ video {
   padding-top: 68px;
 }
 .common-title {
-  padding: 0 48.5px;
   font-family: PingFang SC;
   font-size: 28px;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0em;
 
   /* 文字色/232323 */
   color: #232323;
 }
 .common-title-tips {
-  padding: 16px 16px;
+  padding: 16px 0 0;
   font-family: PingFang SC;
   font-size: 14px;
   font-weight: 600;
@@ -912,6 +920,8 @@ video {
 }
 .writingStyle-main .nav-wrapper-item.active {
   border-bottom: 2px solid #3975FB;
+  width: 100px;
+  margin: 0 93px;
 }
 .writingStyle-main .nav-wrapper-item img {
   width: 80px;
@@ -1006,6 +1016,7 @@ video {
   align-items: center;
 
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url(../assets/img/image@3x.png);
+  background-size: 100% 100%;
 }
 .problem-main {
   margin: 48.5px 0;
@@ -1040,12 +1051,15 @@ video {
 }
 .problem-main .top {
   display: flex;
+  justify-content: space-between;
   padding: 21px 24px 0 24px;
 }
 .problem-main .ttl {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
+}
+.problem-main .ttl p {
   font-family: PingFang SC;
   font-size: 18px;
   font-weight: 600;
@@ -1054,6 +1068,9 @@ video {
 
   /* 文字色/232323 */
   color: #232323;
+}
+.problem-main .ttr {
+  display: flex;
 }
 .problem-main .ttr img {
   width: 60px;
@@ -1080,36 +1097,36 @@ video {
 }
 
 .deal-main .nav-wrapper-item {
+  width: 120px;
+  margin: 0 60px;
   height: 130px;
   /* 自动布局 */
+  display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 0px;
-  gap: 4px;
+  gap: 8px;
   flex-grow: 1;
   align-self: stretch;
-
-  z-index: 0;
   border-bottom: 2px solid transparent;
 }
 .deal-main .nav-wrapper-item.active {
-  border-bottom: 2px solid #3975FB;
+  border-bottom: 3px solid #3975FB;
 }
 .deal-main .nav-wrapper-item img {
   width: 60px;
   height: 60px;
   opacity: 1;
 }
-.deal-main .nav-wrapper-item p {
+.deal-main .nav-wrapper-item span {
   font-family: PingFang SC;
   font-size: 18px;
-  font-weight: normal;
+  font-weight: 500;
   line-height: normal;
   letter-spacing: 0em;
-
-  /* 文字色/232323 */
-  color: #232323;
 }
-.deal-main .nav-wrapper-item.active  p {
+.deal-main .nav-wrapper-item.active span {
   color: #3975FB;
 }
 .deal-main-content {
@@ -1193,7 +1210,7 @@ video {
 }
 
 .business-container {
-  padding-top: 70px;
+  padding-top: 40px;
   opacity: 1;
 
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url(../assets/img/image@3x.png);
@@ -1349,7 +1366,7 @@ video {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 40px 0 0;
   gap: 24px;
 }
 .shangshi-content .lfr {
@@ -1364,7 +1381,7 @@ video {
   padding: 12px 32px;
 
   box-shadow: 0px 2px 14px 0px rgba(0, 0, 0, 0.1);
-  background: url("../assets/img/other_bg.png") no-repeat;
+  background: url("../assets/img/ig_bg.png") no-repeat;
   background-size: 100% 100%;
 }
 .shangshi-content .lfr .ttl {
@@ -1422,7 +1439,7 @@ video {
   justify-content: center;
   align-items: center;
   padding: 10px 24px;
-  margin-top: 49px;
+  margin-top: 32px;
 
   /* 主题色/蓝色 */
   background: #3975FB;
@@ -1451,6 +1468,8 @@ video {
   background-image: url("../assets/img/image@2x-1.png");
   background-size: cover;
   background-position: center;
+  display: flex;
+  flex-direction: column;
 }
 .shangshi-content .item .erp {
   font-family: PingFang SC;
@@ -1470,6 +1489,7 @@ video {
   letter-spacing: 0em;
 
   color: #4B5C76;
+  padding-top: 10px;
 }
 .shangshi-content .item a {
   font-family: PingFang SC;
@@ -1480,6 +1500,7 @@ video {
 
   /* 主题色/蓝色 */
   color: #3975FB;
+  padding-top: 30px;
 }
 /* 经销商 */
 .dealer-container {
@@ -1492,12 +1513,11 @@ video {
 }
 .dealer-content {
   width: 1240px;
-  padding-top: 60px;
+  padding-top: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 32px;
 }
 .nava1 {
   display: flex;
@@ -1512,15 +1532,12 @@ video {
   height: 86px;
   border-radius: 7px;
   opacity: 1;
-  background: #FFFFFF;
   box-sizing: border-box;
-  border: 1px solid #EEEEEE;
-  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background: url("../assets/img/jingx_bg.png") no-repeat;
-  background-size: 100% 100%; */
+  background: url("../assets/img/jingx_bg.png") no-repeat;
+  background-size: 100% 100%;
 }
 .nava1 li img {
   /* width: 80%;
@@ -1561,8 +1578,6 @@ video {
   font-weight: 500;
   line-height: normal;
   letter-spacing: 0em;
-
-  font-variation-settings: "opsz" auto;
   /* 文字色/232323 */
   color: #232323;
   padding-bottom: 8px;
@@ -1573,8 +1588,6 @@ video {
   font-weight: normal;
   line-height: normal;
   letter-spacing: 0em;
-
-  font-variation-settings: "opsz" auto;
   color: #666666;
 }
 .info-main .lfl .nr {
@@ -1614,7 +1627,7 @@ video {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  padding: 10px 11px;
+  padding: 10px 11px 10px 0;
   gap: 4px;
 
   box-sizing: border-box;
@@ -1685,9 +1698,12 @@ video {
   background-size: cover;
   background-position: center;
 }
+.partner-container {
+  padding-top: 30px;
+}
 .partner-main {
   width: 1240px;
-  margin-top: 60px;
+  margin-top: 30px;
   display: flex;
 }
 .partner-main ul {
@@ -1711,16 +1727,10 @@ video {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 7px 0px;
 
   background: linear-gradient(222deg, #DEEEFF -1%, #F1F8FE 100%, #F1F8FE 100%);
 
-  box-sizing: border-box;
-  border: 1px solid ;
-  border-image: linear-gradient(222deg, #FFFFFF 0%, #93BEFF 98%) 1;
-
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.08);
-  padding-top: 10px;
 }
 .partner-main .parner-1 img {
   width: 68px;
@@ -1757,8 +1767,6 @@ video {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px 24px;
-  flex-grow: 1;
   align-self: stretch;
   padding-top: 10px;
 }
@@ -1769,6 +1777,7 @@ video {
   line-height: normal;
   text-align: center;
   letter-spacing: 0em;
+  margin-bottom: 2px;
 
   color: #4B5C76;
 }

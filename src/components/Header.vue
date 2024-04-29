@@ -2,32 +2,34 @@
   <!-- 头部整体盒子 -->
   <div id="header" class="container-fuild">
     <!-- 电脑导航 -->
-    <div class="header-nav container hidden-xs">
-      <!-- 导航logo -->
-      <div class="header-nav-logo">
-        <img src="@/assets/img/logo.png">
-        <img src="@/assets/img/logo-2.png">
+    <div class="header-nav hidden-xs">
+      <div class="header-nav-main">
+        <!-- 导航logo -->
+        <div class="header-nav-logo">
+          <img src="@/assets/img/logo.png">
+          <img src="@/assets/img/logo-2.png">
+        </div>
+        <!-- 导航内容 -->
+        <ul class="header-nav-wrapper">
+          <li
+            v-for="(item,index) in navList"
+            :key="index"
+            :class="index==navIndex?'active':''"
+            @click="navClick(index,item.name)"
+          >
+            <a>
+              {{item.name}}
+              <span v-if="item.children.length>0" class="glyphicon glyphicon-menu-down"></span>
+              <i class="underline"></i>
+            </a>
+            <dl v-if="item.children.length>0">
+              <dt v-for="(i,n) in item.children" :key="n">
+                <router-link :to="i.path">{{i.name}}</router-link>
+              </dt>
+            </dl>
+          </li>
+        </ul>
       </div>
-      <!-- 导航内容 -->
-      <ul class="header-nav-wrapper">
-        <li
-          v-for="(item,index) in navList"
-          :key="index"
-          :class="index==navIndex?'active':''"
-          @click="navClick(index,item.name)"
-        >
-          <a>
-            {{item.name}}
-            <span v-if="item.children.length>0" class="glyphicon glyphicon-menu-down"></span>
-            <i class="underline"></i>
-          </a>
-          <dl v-if="item.children.length>0">
-            <dt v-for="(i,n) in item.children" :key="n">
-              <router-link :to="i.path">{{i.name}}</router-link>
-            </dt>
-          </dl>
-        </li>
-      </ul>
       <div class="header-nav-phone">
         <span>0592-5550863</span>
       </div>
@@ -127,9 +129,12 @@ export default {
 #header {
   background: #fff;
   transition: all ease 0.6s;
+  max-width: 100%;
+  width: 1440px;
+  padding: 0 120px 0 90px;
 }
 #header .header-top {
-  height: 50px;
+  height: 66px;
   color: #fff;
   font-size: 12px;
   line-height: 50px;
@@ -139,11 +144,14 @@ export default {
 #header .header-top span {
   margin: 0 8px;
 }
+.header-nav-main {
+  display: flex;
+}
 /* 导航栏 */
 #header .header-nav {
-  height: 100px;
+  height: 66px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 /* 导航栏logo */
 #header .header-nav .header-nav-logo {
@@ -169,7 +177,7 @@ export default {
   line-height: 50px;
 }
 #header .header-nav .header-nav-wrapper {
-  line-height: 100px;
+  line-height: 66px;
   margin: 0;
   display: flex;
   justify-content: space-around;
