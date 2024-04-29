@@ -5,9 +5,9 @@
       <div class="swiper-container banner-swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide" v-for="(item,index) in swiperList" :key="index">
-            <img class="swiper-lazy" :data-src="item.img" alt="轮播图">
+            <img class="swiper-lazy" src="">
             <div class="video-container">
-              <video autoplay loop>
+              <video autoplay loop muted>
                 <source src="@/assets/img/video/earth.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -697,6 +697,7 @@ div {
 /* 整体盒子 */
 #HomePage {
   width: 100%;
+  overflow-x: hidden;
   background-color: #F5F7FA;
 }
 
@@ -714,10 +715,6 @@ div {
   width: 100%;
   height: 100%;
 }
-#swiper .banner-swiper .swiper-slide img {
-  width: 100%;
-  height: 100%;
-}
 .video-container {
   position: absolute; /* 使用绝对定位 */
   bottom: -80px;
@@ -731,6 +728,11 @@ video {
 }
 #swiper .banner-swiper .swiper-slide{
   position: relative;
+  background-color: #f5f5f5;
+}
+#swiper .banner-swiper .swiper-slide img {
+  width: 0;
+  height: 0;
 }
 #swiper .banner-swiper .swiper-slide-title {
   position: absolute;
