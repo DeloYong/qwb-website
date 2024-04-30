@@ -666,21 +666,6 @@ export default {
       observer: true, //修改swiper自己或子元素时，自动初始化swiper
       observeParents: true //修改swiper的父元素时，自动初始化swiper
     });
-    /* customer-swiper */
-    new Swiper(".customer-swiper", {
-      loop: true, // 循环模式选项
-      slidesPerView: 3,
-      //自动播放
-      autoplay: {
-        delay: 3000,
-        stopOnLastSlide: false,
-        disableOnInteraction: false
-      },
-      // 如果需要前进后退按钮
-      navigation: false,
-      observer: true, //修改swiper自己或子元素时，自动初始化swiper
-      observeParents: true //修改swiper的父元素时，自动初始化swiper
-    });
     /* wowjs动画 */
     var wow = new WOW({
       boxClass: 'wow',
