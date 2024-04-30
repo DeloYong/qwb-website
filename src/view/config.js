@@ -150,59 +150,67 @@ export const dealCtList = [
 
 export const businessList = [
   {
-    img: require("@/assets/img/场景5-1-1@4x.png"),
-    title: '多门店管理',
+    children: [
+      {
+        img: require("@/assets/img/场景5-1-1@4x.png"),
+        title: '多门店管理',
+      },
+      {
+        img: require("@/assets/img/场景5-2-1@4x.png"),
+        title: '业务GPS定位',
+      },
+      {
+        img: require("@/assets/img/场景5-3-1@4x.png"),
+        title: '物流配送平台',
+      },
+      {
+        img: require("@/assets/img/场景5-4-1@4x-2.png"),
+        title: '车辆管理',
+      }
+    ]
   },
   {
-    img: require("@/assets/img/场景5-2-1@4x.png"),
-    title: '业务GPS定位',
+    children: [
+      {
+        img: require("@/assets/img/场景5-4-1@4x.png"),
+        title: '保质期/批次管理',
+      },
+      {
+        img: require("@/assets/img/场景5-5-1@4x.png"),
+        title: '会计凭证/报表',
+      }
+      ,
+      {
+        img: require("@/assets/img/场景5-6-1@4x.png"),
+        title: '自动云打印',
+      }
+      ,
+      {
+        img: require("@/assets/img/场景5-7-1@4x.png"),
+        title: 'CRM客户管理',
+      }
+    ]
   },
   {
-    img: require("@/assets/img/场景5-3-1@4x.png"),
-    title: '物流配送平台',
+    children: [
+      {
+        img: require("@/assets/img/场景5-8-1@4x.png"),
+        title: '提成业绩管理',
+      },
+      {
+        img: require("@/assets/img/场景5-9-1@4x.png"),
+        title: '授信额度 账龄管理',
+      },
+      {
+        img: require("@/assets/img/场景5-10-1@4x.png"),
+        title: '会员积分管理',
+      },
+      {
+        img: require("@/assets/img/场景5-11-1@4x.png"),
+        title: '线下餐饮',
+      }
+    ]
   },
-  {
-    img: require("@/assets/img/场景5-4-1@4x-2.png"),
-    title: '车辆管理',
-  },
-  {
-    img: require("@/assets/img/场景5-4-1@4x.png"),
-    title: '保质期/批次管理',
-  },
-  {
-    img: require("@/assets/img/场景5-5-1@4x.png"),
-    title: '会计凭证/报表',
-  }
-  ,
-  {
-    img: require("@/assets/img/场景5-6-1@4x.png"),
-    title: '自动云打印',
-  }
-  ,
-  {
-    img: require("@/assets/img/场景5-7-1@4x.png"),
-    title: 'CRM客户管理',
-  }
-  ,
-  {
-    img: require("@/assets/img/场景5-8-1@4x.png"),
-    title: '提成业绩管理',
-  }
-  ,
-  {
-    img: require("@/assets/img/场景5-9-1@4x.png"),
-    title: '授信额度 账龄管理',
-  }
-  ,
-  {
-    img: require("@/assets/img/场景5-10-1@4x.png"),
-    title: '会员积分管理',
-  }
-  ,
-  {
-    img: require("@/assets/img/场景5-11-1@4x.png"),
-    title: '线下餐饮',
-  }
 ]
 
 export const dealerNavList = [

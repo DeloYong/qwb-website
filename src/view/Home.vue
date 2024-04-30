@@ -63,7 +63,7 @@
     </div>
     <!-- 写作方式 -->
     <div id="writingStyle" class="container-fuild">
-      <div class="row writingStyle-container">
+      <div class="writingStyle-container">
         <div class="common-title flxc">
           重新定义数字化写作方式
         </div>
@@ -147,7 +147,7 @@
     </div>
     <!-- problem -->
     <div id="problem" class="container-fuild">
-      <div class="row problem-container">
+      <div class="problem-container">
         <div class="common-title flxc">
           您的企业是否面临这些难题
         </div>
@@ -170,7 +170,7 @@
           </ul>
         </div>
       </div>
-      <div id="deal" class="row problem-container" style="padding-top: 37px">
+      <div id="deal" class="problem-container" style="padding-top: 37px">
         <div class="common-title flxc">
           在企微宝，这些问题都能解决
         </div>
@@ -213,7 +213,7 @@
     </div>
     <!-- 数字生态圈 -->
     <div id="math" class="container-fuild">
-      <div class="row math-container">
+      <div class="math-container">
         <div class="common-title flxc">
           数字生态圈，契合多场景应用，一站式解决方案
         </div>
@@ -222,21 +222,23 @@
     </div>
     <!-- 多元化 -->
     <div class="container-fuild">
-      <div class="row business-container">
+      <div class="business-container">
         <div class="common-title flxc">
           丰富的业务模块，满足多元化需求
         </div>
         <div class="business-content flxc">
-          <ul>
-            <li v-for="(item, index) in businessList" :key="index">
-              <img :src="item.img" alt="">
+          <ul v-for="(item, index) in businessList" :key="index">
+            <li v-for="(item2, index2) in item.children" :key="index2">
+              <img :src="item2.img" alt="">
               <span>
-                {{item.title}}
+                {{item2.title}}
               </span>
             </li>
           </ul>
         </div>
-        <!-- 食品 -->
+      </div>
+    </div>
+    <!-- 食品 -->
         <div class="container-fuild">
           <div class="food-container">
             <div class="common-title flxc">
@@ -245,18 +247,16 @@
             <div class="food-content"></div>
           </div>
         </div>
-      </div>
-    </div>
     <!-- 创业 -->
     <div class="container-fuild">
-      <div class="row start-container">
+      <div class="start-container">
         <div class="common-title flxc">
           能陪你创业，也能陪你上市
         </div>
         <div class="start-content flxc">
           <ul>
             <li class="flxc">
-              <div class="title">个人</div>
+              <div class="title">个人免费版</div>
               <div class="nr">
                 <dl>
                   <dt>· 多人现在协作表格，收集处理数据</dt>
@@ -270,7 +270,7 @@
               </div>
             </li>
             <li class="flxc">
-              <div class="title">个人</div>
+              <div class="title">个人免费版</div>
               <div class="nr">
                 <dl>
                   <dt>· 多人现在协作表格，收集处理数据</dt>
@@ -284,7 +284,7 @@
               </div>
             </li>
             <li class="flxc">
-              <div class="title">个人</div>
+              <div class="title">个人免费版</div>
               <div class="nr">
                 <dl>
                   <dt>· 多人现在协作表格，收集处理数据</dt>
@@ -303,7 +303,7 @@
     </div>
     <!-- 上市 -->
     <div class="container-fuild">
-      <div class="row shangshi-container">
+      <div class="shangshi-container">
         <div class="common-title flxc">
           能陪你创业，也能陪你上市
         </div>
@@ -360,7 +360,7 @@
     </div>
     <!-- 经销商 -->
     <div class="container-fuild">
-      <div class="row dealer-container">
+      <div class="dealer-container">
         <div class="common-title flxc">
           他们的经销商都在用
         </div>
@@ -443,7 +443,7 @@
       </div>
     </div>
     <!-- 供应商 -->
-    <div id="deal" class="row dealer-container">
+    <div id="deal" class="dealer-container">
       <div class="deal-main flxc">
         <div class="nav-wrapper flxc">
           <div
@@ -460,7 +460,7 @@
       </div>
     </div>
     <!-- 资讯 -->
-    <div id="info" class="row problem-container">
+    <div id="info" class="problem-container">
       <div class="common-title flxc">
         企微资讯
       </div>
@@ -525,12 +525,26 @@
                 </div>
                </div>
             </li>
+            <li>
+               <div class="lf">
+                <div class="date">12</div>
+                <div class="year">2024-03</div>
+               </div>
+               <div class="lr">
+                <div class="ttl">
+                  成都在远方供应链，企微宝如何助力物流转型三方仓日发货9万单？
+                </div>
+                <div class="ct">
+                  最开始在远方是一家快递物流发货仓，当时有部分客户，经由在远方的客服协助，登录不同客户的ERP来进行发货，订单量一大，出现了库存数据混乱的...
+                </div>
+               </div>
+            </li>
           </ul>
         </div>
       </div>
     </div>
     <!-- 合伙人 -->
-    <div id="partner" class="row partner-container">
+    <div id="partner" class="partner-container">
       <div class="common-title flxc">
         成为企微宝合伙人
       </div>
@@ -1214,15 +1228,24 @@ video {
   opacity: 1;
 
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url(../assets/img/image@3x.png);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .business-content {
   margin-top: 40px;
   margin-bottom: 70px;
-}
-.business-content ul {
   width: 1200px;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px;
+  gap: 20px;
+}
+.business-content ul {
+  display: flex;
   flex-direction: row;
   align-items: center;
   padding: 0px;
@@ -1230,6 +1253,8 @@ video {
 }
 .business-content ul li {
   width: 285px;
+  height: 76px;
+  /* 自动布局 */
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -1513,7 +1538,7 @@ video {
 }
 .dealer-content {
   width: 1240px;
-  padding-top: 50px;
+  padding-top: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1728,9 +1753,15 @@ video {
   justify-content: center;
   align-items: center;
 
-  background: linear-gradient(222deg, #DEEEFF -1%, #F1F8FE 100%, #F1F8FE 100%);
+  border-radius: 12px;
+
+  background: linear-gradient(222deg, #DEEEFF -2%, #F1F8FE 99%, #F1F8FE 99%);
+
+  box-sizing: border-box;
 
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.08);
+
+  z-index: 1;
 }
 .partner-main .parner-1 img {
   width: 68px;
