@@ -209,6 +209,7 @@ export default {
   padding: 32px 20px;
   gap: 20px;
   align-self: stretch;
+  align-items: flex-start;
 }
 .footer-content .ct1-ttl {
   font-family: PingFang SC;
