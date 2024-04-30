@@ -132,6 +132,7 @@ export default {
   max-width: 100%;
   width: 1440px;
   padding: 0 120px 0 90px;
+  margin: 0 auto;
 }
 #header .header-top {
   height: 66px;

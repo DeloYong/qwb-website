@@ -78,6 +78,7 @@
             >
               <img :src="item.img" />
               <p>{{item.title}}</p>
+              <div v-if="writingActiveIndex === index" class="line"></div>
             </div>
           </div>
           <div class="writingStyle-main-content flxc">
@@ -186,6 +187,7 @@
             >
               <img :src="item.img" />
               <span>{{item.title}}</span>
+              <div v-if="dealActiveIndex === index" class="line"></div>
             </div>
           </div>
           <div class="deal-main-content">
@@ -221,7 +223,7 @@
       </div>
     </div>
     <!-- 多元化 -->
-    <div class="container-fuild">
+    <div class="dyh-main container-fuild">
       <div class="business-container">
         <div class="common-title flxc">
           丰富的业务模块，满足多元化需求
@@ -237,16 +239,16 @@
           </ul>
         </div>
       </div>
-    </div>
-    <!-- 食品 -->
-        <div class="container-fuild">
-          <div class="food-container">
-            <div class="common-title flxc">
-              快消、调味品、小食品渠道商专属数字化平台
-            </div>
-            <div class="food-content"></div>
+      <!-- 食品 -->
+      <div class="container-fuild">
+        <div class="food-container">
+          <div class="common-title flxc">
+            快消、调味品、小食品渠道商专属数字化平台
           </div>
+          <div class="food-content"></div>
         </div>
+      </div>
+    </div>
     <!-- 创业 -->
     <div class="container-fuild">
       <div class="start-container">
@@ -455,6 +457,7 @@
           >
             <img :src="item.img" />
             <p>{{item.title}}</p>
+            <div v-if="supplierActiveIndex === index" class="line"></div>
           </div>
         </div>
       </div>
@@ -826,7 +829,7 @@ video {
 }
 /* banner-nav */
 .banner-nav {
-  margin-top: -25px;
+  margin-top: -62px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -916,27 +919,25 @@ video {
   flex-direction: column;
 }
 .writingStyle-main .nav-wrapper {
-  justify-content: space-around;
+  width: 800px;
+  height: 130px;
 }
 
 .writingStyle-main .nav-wrapper-item {
   width: 266.67px;
   height: 130px;
   /* 自动布局 */
+  display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 0px;
   gap: 4px;
   flex-grow: 1;
   align-self: stretch;
-
-  z-index: 0;
-  border-bottom: 2px solid transparent;
+  position: relative;
 }
-.writingStyle-main .nav-wrapper-item.active {
-  border-bottom: 2px solid #3975FB;
-  width: 100px;
-  margin: 0 93px;
-}
+.writingStyle-main .nav-wrapper-item.active {}
 .writingStyle-main .nav-wrapper-item img {
   width: 80px;
   height: 80px;
@@ -954,6 +955,18 @@ video {
 }
 .writingStyle-main .nav-wrapper-item.active  p {
   color: #3975FB;
+}
+.nav-wrapper-item.active .line {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -50px;
+  width: 100px;
+  height: 2px;
+  opacity: 1;
+
+  /* 主题色/蓝色 */
+  background: #3975FB;
 }
 
 .writingStyle-main-content {
@@ -1112,7 +1125,6 @@ video {
 
 .deal-main .nav-wrapper-item {
   width: 120px;
-  margin: 0 60px;
   height: 130px;
   /* 自动布局 */
   display: flex;
@@ -1123,10 +1135,9 @@ video {
   gap: 8px;
   flex-grow: 1;
   align-self: stretch;
-  border-bottom: 2px solid transparent;
+  position: relative;
 }
 .deal-main .nav-wrapper-item.active {
-  border-bottom: 3px solid #3975FB;
 }
 .deal-main .nav-wrapper-item img {
   width: 60px;
@@ -1142,6 +1153,18 @@ video {
 }
 .deal-main .nav-wrapper-item.active span {
   color: #3975FB;
+}
+.deal-main .nav-wrapper-item.active .line {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -60px;
+  width: 120px;
+  height: 2px;
+  opacity: 1;
+
+  /* 主题色/蓝色 */
+  background: #3975FB;
 }
 .deal-main-content {
   width: 1440px;
@@ -1222,12 +1245,12 @@ video {
   background: url("../assets/img/math_bg.png") no-repeat #E4E9F0;
   background-size: 100% 100%;
 }
-
+.dyh-main {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url(../assets/img/image@3x.png);
+}
 .business-container {
   padding-top: 40px;
   opacity: 1;
-
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url(../assets/img/image@3x.png);
 
   display: flex;
   flex-direction: column;
@@ -1282,19 +1305,18 @@ video {
 
 /* 快消 */
 .food-container {
-  padding: 33px 0;
-  background-color: #f3f8fb;
+  padding: 33px 0 0;
 }
 .food-content {
   width: 1440px;
-  height: 498px;
+  height: 599px;
   margin: 0 auto;
   background: url("../assets/img/39@2x.png") no-repeat;
   background-size: 100% 100%;
 }
 
 .start-container {
-  margin-top: 60px;
+  margin-top: 40.5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1302,7 +1324,7 @@ video {
 }
 .start-content {
   width: 1240px;
-  padding-top: 60px;
+  padding-top: 20.5px;
 }
 .start-content ul {
   display: flex;
@@ -1313,17 +1335,17 @@ video {
   gap: 24px;
 }
 .start-content li {
+   width: 384px;
+  height: 350px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px 0px;
 
   background: url("../assets/img/image@2x.png") no-repeat;
   background-size: 100% 100%;
 
   box-shadow: 0px 2px 14px 0px rgba(0, 0, 0, 0.1);
-  padding: 50px;
   flex-direction: column;
 }
 .start-content .title {
@@ -1459,11 +1481,12 @@ video {
   color: #4B5C76;
 }
 .shangshi-content .lfr .btn-b {
+  width: 120px;
+  height: 32px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px 24px;
   margin-top: 32px;
 
   /* 主题色/蓝色 */
@@ -1551,6 +1574,7 @@ video {
   align-items: center;
   padding: 0px;
   gap: 4px;
+  margin-bottom: 24px;
 }
 .nava1 li {
   width: 200px;
