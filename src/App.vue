@@ -1,9 +1,11 @@
 <template>
   <div id="app" v-cloak>
-    <Header></Header>
-    <router-view/>
-    <Footer></Footer>
-    <GoTop></GoTop>
+    <Header />
+    <div class="app-content">
+      <router-view/>
+    </div>
+    <Footer loading="lazy" />
+    <GoTop />
   </div>
 </template>
 
@@ -20,5 +22,8 @@ export default {
 #app {
   max-width: 100%;
   overflow-x: hidden;
+}
+.app-content {
+  min-height: 2000px;
 }
 </style>

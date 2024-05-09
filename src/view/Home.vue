@@ -1,7 +1,7 @@
 <template>
-  <div id="HomePage" class="wow fadeIn" data-wow-duration="1s" data-wow-delay="1s">
+  <div id="HomePage">
     <!-- 轮播图 -->
-    <div id="swiper" class="container-fuild">
+    <div id="swiper" class="container-fuild wow fadeIn" data-wow-duration="1s" data-wow-delay="1s">
       <div class="swiper-container banner-swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide" v-for="(item,index) in swiperList" :key="index">
@@ -13,7 +13,8 @@
               </video>
             </div>
             <div class="swiper-lazy-preloader"></div>
-            <div class="swiper-slide-title">
+            <div class="slide-title-main">
+              <div class="swiper-slide-title">
                 <p class="tt1">{{item.title}}</p>
                 <p class="tt2">{{item.content}}</p>
                 <p class="tt3">{{item.content2}}</p>
@@ -21,6 +22,7 @@
                   <div class="btn-b1">下载免费版</div>
                   <div class="btn-b2">下载企业版</div>
                 </div>
+              </div>
             </div>
           </div>
         </div>
@@ -30,31 +32,31 @@
     <div class="banner-nav">
       <ul>
         <li>
-          <img src="@/assets/img/场景1-进存销-1@2x.png">
+          <img loading="lazy" src="@/assets/img/场景1-进存销-1@2x.png">
           <span>
             进存销
           </span>
         </li>
         <li>
-          <img src="@/assets/img/场景1-会计-1@2x.png">
+          <img loading="lazy" src="@/assets/img/场景1-会计-1@2x.png">
           <span>
             智能会议
           </span>
         </li>
         <li>
-          <img src="@/assets/img/场景1-商店-1@2x.png">
+          <img loading="lazy" src="@/assets/img/场景1-商店-1@2x.png">
           <span>
             商品门店
           </span>
         </li>
         <li>
-          <img src="@/assets/img/场景1-物流-1@2x.png">
+          <img loading="lazy" src="@/assets/img/场景1-物流-1@2x.png">
           <span>
             物流配送
           </span>
         </li>
         <li>
-          <img src="@/assets/img/场景1-外勤-1@2x.png">
+          <img loading="lazy" src="@/assets/img/场景1-外勤-1@2x.png">
           <span>
             业务外勤
           </span>
@@ -76,7 +78,7 @@
               :class="{ active: writingActiveIndex === index }"
               @click="setWritingActive(index)"
             >
-              <img :src="item.img" />
+              <img loading="lazy" :src="item.img" />
               <p>{{item.title}}</p>
               <div v-if="writingActiveIndex === index" class="line"></div>
             </div>
@@ -90,49 +92,49 @@
                 <ul>
                   <li>
                     <div class="vector">
-                      <img src="@/assets/img/Vector.png">
+                      <img loading="lazy" src="@/assets/img/Vector.png">
                     </div>
                     <span>有效降低订单执行成本</span>
                   </li>
                   <li>
                     <div class="vector">
-                      <img src="@/assets/img/Vector.png">
+                      <img loading="lazy" src="@/assets/img/Vector.png">
                     </div>
                     <span>新渠道快速落地</span>
                   </li>
                   <li>
                     <div class="vector">
-                      <img src="@/assets/img/Vector.png">
+                      <img loading="lazy" src="@/assets/img/Vector.png">
                     </div>
                     <span>数字化管理新渠道</span>
                   </li>
                   <li>
                     <div class="vector">
-                      <img src="@/assets/img/Vector.png">
+                      <img loading="lazy" src="@/assets/img/Vector.png">
                     </div>
                     <span>全渠道会员精准营销</span>
                   </li>
                   <li>
                     <div class="vector">
-                      <img src="@/assets/img/Vector.png">
+                      <img loading="lazy" src="@/assets/img/Vector.png">
                     </div>
                     <span>数字化管理新渠道</span>
                   </li>
                   <li>
                     <div class="vector">
-                      <img src="@/assets/img/Vector.png">
+                      <img loading="lazy" src="@/assets/img/Vector.png">
                     </div>
                     <span>全渠道会员精准营销</span>
                   </li>
                   <li>
                     <div class="vector">
-                      <img src="@/assets/img/Vector.png">
+                      <img loading="lazy" src="@/assets/img/Vector.png">
                     </div>
                     <span>数字化管理新渠道</span>
                   </li>
                   <li>
                     <div class="vector">
-                      <img src="@/assets/img/Vector.png">
+                      <img loading="lazy" src="@/assets/img/Vector.png">
                     </div>
                     <span>全渠道会员精准营销</span>
                   </li>
@@ -140,7 +142,7 @@
               </div>
             </div>
             <div class="writingStyle-main-content-flr flxc">
-              <img src="@/assets/img/插画-1-1@2x.png" alt="">
+              <img loading="lazy" src="@/assets/img/插画-1-1@2x.png" alt="">
             </div>
           </div>
         </div>
@@ -161,7 +163,7 @@
                   <p>{{item.ttl2}}</p>
                 </div>
                 <div class="ttr">
-                  <img :src="item.img" alt="">
+                  <img loading="lazy" :src="item.img" alt="">
                 </div>
               </div>
               <div class="bottom">
@@ -185,7 +187,7 @@
               :class="{ active: dealActiveIndex === index }"
               @click="setDealActive(index)"
             >
-              <img :src="item.img" />
+              <img loading="lazy" :src="item.img" />
               <span>{{item.title}}</span>
               <div v-if="dealActiveIndex === index" class="line"></div>
             </div>
@@ -199,7 +201,7 @@
                 <ul>
                   <li v-for="(item, index) in dealCtList" :key="index">
                     <div class="vector">
-                      <img :src="item.img">
+                      <img loading="lazy" :src="item.img">
                     </div>
                     <span>{{item.title}}</span>
                   </li>
@@ -207,7 +209,7 @@
               </div>
             </div>
             <div class="deal-main-content-flr flxc">
-              <img src="@/assets/img/插画-2-1@2x.png" alt="">
+              <img loading="lazy" src="@/assets/img/插画-2-1@2x.png" alt="">
             </div>
           </div>
         </div>
@@ -231,7 +233,7 @@
         <div class="business-content flxc">
           <ul v-for="(item, index) in businessList" :key="index">
             <li v-for="(item2, index2) in item.children" :key="index2">
-              <img :src="item2.img" alt="">
+              <img loading="lazy" :src="item2.img" alt="">
               <span>
                 {{item2.title}}
               </span>
@@ -323,7 +325,7 @@
               <ul>
                 <li v-for="(item, index) in erpCtList" :key="index">
                   <div class="vector">
-                    <img :src="item.img">
+                    <img loading="lazy" :src="item.img">
                   </div>
                   <span>{{item.title}}</span>
                 </li>
@@ -369,76 +371,76 @@
         <div class="dealer-content">
           <ul class="nava1">
             <li class="item1">
-              <img src="@/assets/img/dealer/image@1x-2.png" alt="">
+              <img loading="lazy" src="@/assets/img/dealer/image@1x-2.png" alt="">
             </li>
             <li class="item1">
-              <img src="@/assets/img/dealer/image@1x-3.png" alt="">
+              <img loading="lazy" src="@/assets/img/dealer/image@1x-3.png" alt="">
             </li>
             <li class="item1">
-              <img src="@/assets/img/dealer/image@1x-4.png" alt="">
+              <img loading="lazy" src="@/assets/img/dealer/image@1x-4.png" alt="">
             </li>
             <li class="item1">
-              <img src="@/assets/img/dealer/image@1x-5.png" alt="">
+              <img loading="lazy" src="@/assets/img/dealer/image@1x-5.png" alt="">
             </li>
             <li class="item1">
-              <img src="@/assets/img/dealer/image@1x-6.png" alt="">
+              <img loading="lazy" src="@/assets/img/dealer/image@1x-6.png" alt="">
             </li>
             <li class="item1">
-              <img src="@/assets/img/dealer/image@1x-7.png" alt="">
-            </li>
-          </ul>
-          <ul class="nava1">
-            <li class="item1">
-              <img src="@/assets/img/dealer/image@1x-8.png" alt="">
-            </li>
-            <li class="item1">
-              <img src="@/assets/img/dealer/image@1x-9.png" alt="">
-            </li>
-            <li class="item1">
-              <img src="@/assets/img/dealer/image@1x-10.png" alt="">
-            </li>
-            <li class="item1">
-              <img src="@/assets/img/dealer/image@1x-11.png" alt="">
-            </li>
-            <li class="item1">
-              <img src="@/assets/img/dealer/image@1x-12.png" alt="">
+              <img loading="lazy" src="@/assets/img/dealer/image@1x-7.png" alt="">
             </li>
           </ul>
           <ul class="nava1">
             <li class="item1">
-              <img src="@/assets/img/dealer/image@1x-13.png" alt="">
+              <img loading="lazy" src="@/assets/img/dealer/image@1x-8.png" alt="">
             </li>
             <li class="item1">
-              <img src="@/assets/img/dealer/image@1x-14.png" alt="">
+              <img loading="lazy" src="@/assets/img/dealer/image@1x-9.png" alt="">
             </li>
             <li class="item1">
-              <img src="@/assets/img/dealer/image@1x-15.png" alt="">
+              <img loading="lazy" src="@/assets/img/dealer/image@1x-10.png" alt="">
             </li>
             <li class="item1">
-              <img src="@/assets/img/dealer/image@1x-16.png" alt="">
+              <img loading="lazy" src="@/assets/img/dealer/image@1x-11.png" alt="">
             </li>
             <li class="item1">
-              <img src="@/assets/img/dealer/image@1x-17.png" alt="">
-            </li>
-            <li class="item1">
-              <img src="@/assets/img/dealer/image@1x-18.png" alt="">
+              <img loading="lazy" src="@/assets/img/dealer/image@1x-12.png" alt="">
             </li>
           </ul>
           <ul class="nava1">
             <li class="item1">
-              <img src="@/assets/img/dealer/image@1x-19.png" alt="">
+              <img loading="lazy" src="@/assets/img/dealer/image@1x-13.png" alt="">
             </li>
             <li class="item1">
-              <img src="@/assets/img/dealer/image@1x-20.png" alt="">
+              <img loading="lazy" src="@/assets/img/dealer/image@1x-14.png" alt="">
             </li>
             <li class="item1">
-              <img src="@/assets/img/dealer/image@1x-21.png" alt="">
+              <img loading="lazy" src="@/assets/img/dealer/image@1x-15.png" alt="">
             </li>
             <li class="item1">
-              <img src="@/assets/img/dealer/image@1x-22.png" alt="">
+              <img loading="lazy" src="@/assets/img/dealer/image@1x-16.png" alt="">
             </li>
             <li class="item1">
-              <img src="@/assets/img/dealer/image@1x.png" alt="">
+              <img loading="lazy" src="@/assets/img/dealer/image@1x-17.png" alt="">
+            </li>
+            <li class="item1">
+              <img loading="lazy" src="@/assets/img/dealer/image@1x-18.png" alt="">
+            </li>
+          </ul>
+          <ul class="nava1">
+            <li class="item1">
+              <img loading="lazy" src="@/assets/img/dealer/image@1x-19.png" alt="">
+            </li>
+            <li class="item1">
+              <img loading="lazy" src="@/assets/img/dealer/image@1x-20.png" alt="">
+            </li>
+            <li class="item1">
+              <img loading="lazy" src="@/assets/img/dealer/image@1x-21.png" alt="">
+            </li>
+            <li class="item1">
+              <img loading="lazy" src="@/assets/img/dealer/image@1x-22.png" alt="">
+            </li>
+            <li class="item1">
+              <img loading="lazy" src="@/assets/img/dealer/image@1x.png" alt="">
             </li>
           </ul>
         </div>
@@ -455,7 +457,7 @@
             :class="{ active: supplierActiveIndex === index }"
             @click="setSupplierActive(index)"
           >
-            <img :src="item.img" />
+            <img loading="lazy" :src="item.img" />
             <p>{{item.title}}</p>
             <div v-if="supplierActiveIndex === index" class="line"></div>
           </div>
@@ -470,7 +472,7 @@
       <div class="info-main">
         <div class="lfl">
            <div class="info-img">
-            <img src="@/assets/img/house.png" alt="">
+            <img loading="lazy" src="@/assets/img/house.png" alt="">
            </div>
            <div class="lfr-ct">
             <div class="ttl">
@@ -555,7 +557,7 @@
         <ul>
           <li class="parner-1">
             <div class="icon">
-              <img src="@/assets/img/partner/partner-1.png" alt="">
+              <img loading="lazy" src="@/assets/img/partner/partner-1.png" alt="">
             </div>
             <p class="ttl">企微招募人</p>
             <div class="ctr">
@@ -566,7 +568,7 @@
           </li>
           <li class="parner-2">
             <div class="icon">
-              <img src="@/assets/img/partner/partner-2.png" alt="">
+              <img loading="lazy" src="@/assets/img/partner/partner-2.png" alt="">
             </div>
             <p class="ttl">企微推荐人</p>
             <div class="ctr">
@@ -577,7 +579,7 @@
           </li>
           <li class="parner-3">
             <div class="icon">
-              <img src="@/assets/img/partner/partner-3.png" alt="">
+              <img loading="lazy" src="@/assets/img/partner/partner-3.png" alt="">
             </div>
             <p class="ttl">企微分销</p>
             <div class="ctr">
@@ -588,7 +590,7 @@
           </li>
           <li class="parner-4">
             <div class="icon">
-              <img src="@/assets/img/partner/partner-4.png" alt="">
+              <img loading="lazy" src="@/assets/img/partner/partner-4.png" alt="">
             </div>
             <p class="ttl">区域代理</p>
             <div class="ctr">
@@ -599,7 +601,7 @@
           </li>
           <li class="parner-5">
             <div class="icon">
-              <img src="@/assets/img/partner/partner-5.png" alt="">
+              <img loading="lazy" src="@/assets/img/partner/partner-5.png" alt="">
             </div>
             <p class="ttl">金牌合伙人</p>
             <div class="ctr">
@@ -733,7 +735,12 @@ video {
   width: 0;
   height: 0;
 }
-#swiper .banner-swiper .swiper-slide-title {
+#swiper .banner-swiper .slide-title-main {
+  width: 1440px;
+  margin: 0 auto;
+  position: relative;
+}
+#swiper .banner-swiper .slide-title-main .swiper-slide-title {
   position: absolute;
   top: 100px;
   left: 118px;
